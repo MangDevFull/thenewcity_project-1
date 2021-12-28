@@ -1,0 +1,107 @@
+<!-- Start right Content here -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="">
+            <div class="page-header-title">
+            </div>
+        </div>
+        <div class="page-content-wrapper ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body user-card">
+                                <div class="media-main">
+                                    <a class="float-left" href="#">
+                                        <img class="thumb-lg rounded-circle" src="/assets/images/users/avatar-4.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="info pl-3">
+                                        <h4 class="mt-3">Họ và tên: {{singleContact.fullname}}</h4>
+                                        <p class="text-muted">Email: {{singleContact.email}}</p>
+                                        </p>
+                                        <p class="text-muted">Phone: {{singleContact.phone}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="clearfix"></div>
+
+                                <p class="text-muted info-text">
+                                <h2>Chủ đề</h2>
+                                <p>{{singleContact.subject}}</p>
+                                </p>
+                                <p class="text-muted info-text">
+                                <h2>Nội dung</h2>
+                                <p>{{singleContact.note}}</p>
+                                </p>
+                                <p style="display:none" id="getId">{{singleContact._id}}</p>
+                                <p id="status" style="display:none">{{singleContact.status}}</p>
+                                <button id="delete" style="float: right" class="btn btn-danger">Xóa</button></a>
+                                <div class="modal fade" id="ignismyModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label=""><span>×</span></button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <div class="thank-you-pop">
+                                                    <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png"
+                                                        alt="">
+                                                    <h1>Xóa thành công</h1>
+                                                    <p>Bạn đang được chuyển hướng</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- card-body -->
+                        </div>
+                    </div> <!-- End Row -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var id = $("#getId").text();
+            var status = $("#status").text();
+            if (status == "unRead") {
+                console.log(id)
+                $.ajax({
+                    url: "./updateStatus",
+                    method: "PUT",
+                    data: { data: id },
+                    success: function (data) {
+                        console.log(data.boolean)
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+            }
+            $("#delete").click(function () {
+                $.ajax({
+                    url: "./deleteContact",
+                    method: "DELETE",
+                    data: { data: id },
+                    success: function (data) {
+                        if (data.boolean) {
+                            $('#ignismyModal').modal('show');
+                            setTimeout(function () {
+                                window.location.replace("./home");
+                            },1500)
+                        }
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                })
+            })
+        });
+    </script>

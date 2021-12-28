@@ -1,0 +1,63 @@
+<section class="breadcrumb-area d-flex  p-relative align-items-center"
+    style="background-image:url(img/testimonial/test-bg.png)">
+    <!-- Lines -->
+    <div class="content-lines-wrapper2">
+        <div class="content-lines-inner2">
+            <div class="content-lines2"></div>
+        </div>
+    </div>
+    <!-- Lines -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12 col-lg-12">
+                <div class="breadcrumb-wrap text-left">
+                    <div class="breadcrumb-title">
+                        <h2>Chi tiết tin tức</h2>
+                        <div class="breadcrumb-wrap">
+
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Chi tiết tin tức</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- breadcrumb-area-end -->
+<!-- inner-blog -->
+<section class="inner-blog b-details-p pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="blog-details-wrap">
+                <div class="details__content pb-30">
+                    <h2>{{singleNews.title}}</h2>
+                    <div class="meta-info">
+                        <ul>
+                            <li><i class="fal fa-calendar-alt"></i>{{singleNews.create_day}}</li>
+                        </ul>
+                    </div>
+                    <div class="details__content-img">
+                        <img src="./img/uploads/{{singleNews.image_content}}" alt="Ảnh content">
+                    </div>
+                    <textarea style="display:none" id="getContent">{{singleNews.content}}</textarea>
+                    <div id="render">
+                    </div>
+
+                </div>
+                <!-- #respond -->
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+        $("#render").html($("#getContent").text())
+    })
+</script>

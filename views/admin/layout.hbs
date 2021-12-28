@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="Admin Dashboard" name="description" />
+  <meta content="ThemeDesign" name="author" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+  <!-- Summernote css -->
+  <link rel="stylesheet" href="/assets/plugins/summernote/summernote-bs4.css" />
+  <!--bootstrap-wysihtml5-->
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css">
+
+  <link href="/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/plugins/datatables/fixedHeader.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/plugins/datatables/scroller.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="/assets/plugins/morris/morris.css">
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/icons.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+  <style>
+    /*--thank you pop starts here--*/
+    .thank-you-pop {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .thank-you-pop img {
+      width: 76px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .thank-you-pop h1 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      color: #5C5C5C;
+    }
+
+    .thank-you-pop p {
+      font-size: 20px;
+      margin-bottom: 27px;
+      color: #5C5C5C;
+    }
+
+    .thank-you-pop h3.cupon-pop {
+      font-size: 25px;
+      margin-bottom: 40px;
+      color: #222;
+      display: inline-block;
+      text-align: center;
+      padding: 10px 20px;
+      border: 2px dashed #222;
+      clear: both;
+      font-weight: normal;
+    }
+
+    .thank-you-pop h3.cupon-pop span {
+      color: #03A9F4;
+    }
+
+    .thank-you-pop a {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 9px 20px;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 14px;
+      background-color: #8BC34A;
+      border-radius: 17px;
+    }
+
+    .thank-you-pop a i {
+      margin-right: 5px;
+      color: #fff;
+    }
+
+    #ignismyModal .modal-header {
+      border: 0px;
+    }
+
+    /*--thank you pop ends here--*/
+  </style>
+</head>
+
+<body class="fixed-left">
+
+  <!-- Begin page -->
+  <div id="wrapper">
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+      <!-- LOGO -->
+      <div class="topbar-left">
+        <div class="text-center">
+          <a href="./home" class="logo"><img src="/img/brand/logo-thien-minh-corp.png" alt="" height="70"></a>
+          <a href="./home" class="logo-sm"><img src="/img/brand/logo-thien-minh-corp.png" alt="" height="28"></a>
+        </div>
+      </div>
+      <!-- Button mobile view to collapse sidebar menu -->
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="list-inline menu-left mb-0">
+            <li class="float-left">
+              <button class="button-menu-mobile open-left waves-light waves-effect">
+                <i class="mdi mdi-menu"></i>
+              </button>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-right float-right list-inline">
+            <li class="d-none d-sm-block">
+              <a href="#" id="btn-fullscreen" class="waves-effect waves-light notification-icon-box"><i
+                  class="fas fa-expand"></i></a>
+            </li>
+          </ul>
+          </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+
+    <div class="left side-menu">
+      <div class="sidebar-inner slimscrollleft">
+
+
+        <!--- Divider -->
+
+        <div id="sidebar-menu">
+          <ul>
+            <li>
+              <a href="./home" class="waves-effect"><i class="ti-home"></i><span> Quản lý liên hệ <span
+                    class="badge badge-primary float-right"></span></span></a>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i><span> Quản lý tin tức
+                </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
+              <ul class="list-unstyled">
+                <li><a href="./news">Xem các tin tức</a></li>
+                <li><a href="./addnew">Thêm tin tức mới</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!-- end sidebarinner -->
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- Start right Content here -->
+
+    {{{body}}}
+    <!-- content -->
+
+    <!-- End Right content here -->
+
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/modernizr.min.js"></script>
+    <script src="/assets/js/detect.js"></script>
+    <script src="/assets/js/fastclick.js"></script>
+    <script src="/assets/js/jquery.slimscroll.js"></script>
+    <script src="/assets/js/jquery.blockUI.js"></script>
+    <script src="/assets/js/waves.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/jquery.nicescroll.js"></script>
+    <script src="/assets/js/jquery.scrollTo.min.js"></script>
+    <!-- Required datatable js-->
+    <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+
+    <script src="/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+
+
+
+    <!-- Datatable init js -->
+    <script src="/assets/pages/datatables.init.js"></script>
+
+
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Required datatable js-->
+
+    <script src="/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+    <script src="/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
+    <script src="/assets/plugins/summernote/summernote-bs4.min.js"></script>
+
+    <script src="/assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+
+</body>
+
+</html>
